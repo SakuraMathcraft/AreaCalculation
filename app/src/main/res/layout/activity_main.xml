@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 地图区域 -->
+    <com.amap.api.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <!-- 可拉动底部操作栏 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- 灰色小手柄 -->
+                <View
+                    android:id="@+id/dragHandle"
+                    android:layout_width="match_parent"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/drag_handle_bg"
+                    />
+
+                <!-- 步长输入 -->
+                <EditText
+                    android:id="@+id/stepInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="请输入步长（单位：米）建议1-3区间"
+                    android:inputType="numberDecimal"
+                    android:padding="10dp"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- 基本操作按钮 -->
+                <Button
+                    android:id="@+id/startBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="开始记录坐标(GPS）"
+                    android:backgroundTint="#7B1FA2"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="8dp" />
+
+                <Button
+                    android:id="@+id/stopBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="结束记录并计算面积/周长"
+                    android:backgroundTint="#512DA8"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- 其余功能按钮 -->
+                <Button
+                    android:id="@+id/zoomBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="定位到当前位置"
+                    android:backgroundTint="#303F9F"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="8dp" />
+
+                <Button
+                    android:id="@+id/replayBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="回放轨迹"
+                    android:backgroundTint="#009688"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="8dp" />
+
+                <Button
+                    android:id="@+id/layerBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="切换图层"
+                    android:backgroundTint="#455A64"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="8dp" />
+
+                <Button
+                    android:id="@+id/themeBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="切换主题"
+                    android:backgroundTint="#607D8B"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="8dp" />
+
+                <Button
+                    android:id="@+id/statsBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="查看数据统计"
+                    android:backgroundTint="#009688"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- 显示结果 -->
+                <TextView
+                    android:id="@+id/areaResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="面积结果将在此显示"
+                    android:textSize="16sp"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp" />
+
+                <TextView
+                    android:id="@+id/timeResult"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="时间信息将在此显示"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/stepCountText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="步数将在此显示"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:paddingBottom="8dp" />
+                <TextView
+                    android:id="@+id/realStepCountText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="真实步数将在此显示"
+                    android:textSize="14sp"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:paddingBottom="8dp"/>
+            </LinearLayout>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
