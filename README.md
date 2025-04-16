@@ -1,7 +1,3 @@
-To improve the readability and presentation of your README, here's an enhanced version with more polished formatting, clear sections, and concise descriptions. I've refined the flow and added some additional details for clarity:
-
----
-
 # GPS Tracking and Step Counter App
 
 This Android application is designed to **track the user's location** using **GPS** and **step count** via a built-in step counter sensor. It visualizes the trajectory on a map, provides real-time step count updates, calculates the area and perimeter of the traveled path, and stores the user's tracking data for future reference.
